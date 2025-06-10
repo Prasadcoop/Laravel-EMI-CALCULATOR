@@ -53,7 +53,7 @@
                         @if(session('error'))
                         <div class="alert alert-danger mt-3">{{ session('error') }}</div>
                         @endif
-                        @if ($errors->any())
+                        <!-- @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul class="mb-0">
                                 @foreach ($errors->all() as $error)
@@ -61,7 +61,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        @endif
+                        @endif -->
 
 
                         <form method="POST" action="{{ route('login') }}">

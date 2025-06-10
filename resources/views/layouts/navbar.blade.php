@@ -7,10 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         @auth
-             <li class="nav-item"><a class="nav-link" href="/">Calculate</a></li>
+           @switch(Auth::user()->role)
+             @case('admin')
               <li class="nav-item"><a class="nav-link" href="{{ route('tenures.index') }}">Tenures</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ route('emi-rules.index') }}">EMI Rules</a></li>
-       
+            @default
+              <li class="nav-item"><a class="nav-link" href="/">Calculate</a></li>
+          @endswitch
           <li class="nav-item">
             <form action="{{ route('logout') }}" method="POST">
               @csrf
